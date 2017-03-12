@@ -1,13 +1,25 @@
-<form action="/<%= post.id %>" method="POST">
-	<% if (post.id !== "") { %>
-    <input type="hidden" name="_method" value="put">
-  	<% } %>
-	<label for="title">Title</label>
-	<input type="text" name="title" placeholder="title" value="<%= post.title %>" required>
-
-	<label for="post">Content</label>
-	<textarea rows="5" name="post" placeholder="Content" required=""><%= post.post %></textarea>
-
-  <input type="hidden" name="recommended" value="0">
-	<input type="submit" value="Submit">
-</form>
+<div class="container">
+	<div class="row">
+		<div class="span6">
+			<form action="/<%= post.id %>" method="POST">
+				<% if (post.id !== "") { %>
+			    <input type="hidden" name="_method" value="put">
+			  	<% } %>
+			  	<div class="row col-lg-8">
+			        <div class="input-group">
+						<label for="title">Title</label>
+						<input type="text" name="title" class="form-control" placeholder="title" value="<%= post.title %>" required>
+					</div>
+				</div>
+				<div class="row col-lg-8">
+			        <div class="input-group">
+						<label for="post"></label>
+						<textarea rows="5" name="post" class="form-control" placeholder="Content" required=""><%= post.post %></textarea>
+					</div>
+				</div>	
+			  	<input type="hidden" name="recommended" value="0">
+				<input type="submit" value="Submit">
+			</form> 
+		</div>
+	</div>
+</div>
