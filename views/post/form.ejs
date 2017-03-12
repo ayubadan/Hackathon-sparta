@@ -1,0 +1,13 @@
+<form action="/<%= post.id %>" method="POST">
+	<% if (post.id !== "") { %>
+    <input type="hidden" name="_method" value="put">
+  	<% } %>
+	<label for="title">Title</label>
+	<input type="text" name="title" placeholder="title" value="<%= post.title %>" required>
+
+	<label for="post">Content</label>
+	<textarea rows="5" name="post" placeholder="Content" required=""><%= post.post %></textarea>
+
+  <input type="hidden" name="recommended" value="0">
+	<input type="submit" value="Submit">
+</form>
